@@ -1,1 +1,1 @@
-# my-python-projects
+# python django chatgpt app
