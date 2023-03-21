@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChatGPT App</title>
+</head>
+<body>
+    <h1>Chat with GPT-3</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Send</button>
+        {% for message in chat_history %}
+            <input type="hidden" name="chat_history" value="{{ message }}">
+        {% endfor %}
+    </form>
+    <div id="chat-box">
+        {% for message in chat_history %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
